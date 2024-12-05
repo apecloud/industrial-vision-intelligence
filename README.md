@@ -63,3 +63,12 @@ Solution recommendation system
 - CUDA 11.8+
 - PyTorch 2.0+
 - 16+ GB GPU Memory
+
+## Training
+### Yolov8
+- python3.11 train_yolo.py
+- python3.11 infer.py --model=./train3/weights/best.pt --image ./path/of/image.jpg --save=./out.jpg
+
+## Installation
+### Yolov8
+- YOLO_MODEL_PATH=./train_result/weights/best.pt uvicorn web_yolo:app --port 8000
