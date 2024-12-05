@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Architecture</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.11.0/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #flowchart {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .description {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .description h2 {
+            color: #444;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Industrial Vision Intelligence System Architecture</h1>
+        
+        <div id="flowchart">
+            <pre class="mermaid">
+                flowchart LR
+                    A[Input Image] --> B[YOLOv8 Model]
+                    A --> E[(Vector Database)]
+                    
+                    B --> |Defect Classes & Boxes| C[Knowledge Integration]
+                    E --> |Similar Cases & Experience| C
+                    
+                    C --> G[Prompt Template]
+                    G --> H[Large Language Model]
+                    H --> I[Analysis Summary]
+                    
+                    style A fill:#f9f,stroke:#333
+                    style B fill:#bbf,stroke:#333
+                    style C fill:#dfd,stroke:#333
+                    style E fill:#ddf,stroke:#333
+                    style G fill:#ffd,stroke:#333
+                    style H fill:#bbf,stroke:#333
+                    style I fill:#dfd,stroke:#333
+            </pre>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
