@@ -1,0 +1,6 @@
+path: /home/slc/dataset
+train: train/images
+val: val/images
+
+nc: 6
+names: ['blowhole', 'crack', 'break', 'fray', 'uneven', 'free']
