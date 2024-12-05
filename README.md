@@ -22,20 +22,19 @@ Solution recommendation system
 
 ## Use Cases
 ### Manufacturing Quality Control
-Real-time defect detection
-Automated quality assessment
-Trend analysis and prediction
+- Real-time defect detection
+- Automated quality assessment
+- Trend analysis and prediction
 ### Knowledge Management
-Expert experience digitalization
-Solution retrieval and recommendation
-Continuous learning and optimization
+- Expert experience digitalization
+- Solution retrieval and recommendation
+- Continuous learning and optimization
 ### Process Optimization
-Root cause analysis
-Performance monitoring
-Improvement suggestion generation
-Requirements
-Python 3.8+
-CUDA 11.8+
-PyTorch 2.0+
-16+ GB GPU Memory
-128+ GB RAM
+- Root cause analysis
+- Performance monitoring
+- Improvement suggestion generation
+## Requirements
+- Python 3.8+
+- CUDA 11.8+
+- PyTorch 2.0+
+- 16+ GB GPU Memory
