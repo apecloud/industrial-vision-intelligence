@@ -24,6 +24,10 @@ Utilizes carefully crafted prompt templates for context structuring
 Leverages LLM capabilities to generate comprehensive analysis reports
 This integrated approach enables automated defect analysis while incorporating historical knowledge, resulting in human-readable summaries that facilitate decision-making in industrial quality control processes. The system demonstrates the practical application of combining traditional computer vision techniques with modern AI capabilities for industrial inspection tasks.
 
+## Architecture
+![image](https://github.com/user-attachments/assets/47b9187e-12ed-4ef3-af92-01d776538c1d)
+
+
 ## Key Features
 ### 1. Multi-Model Integration
 YOLOv8 for real-time object detection and defect identification
