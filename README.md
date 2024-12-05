@@ -71,5 +71,5 @@ Solution recommendation system
 
 ## Installation
 ### Yolov8
-- YOLO_MODEL_PATH=./train_result/weights/best.pt uvicorn web_yolo:app --port 8000
-- python3.11 client_yolo.py -i dataset/train/images/train_1051.jpg -o out.jpg
+- web server: YOLO_MODEL_PATH=./train_result/weights/best.pt uvicorn web_yolo:app --port 8000
+- client: python3.11 client_yolo.py -i dataset/train/images/train_1051.jpg -o out.jpg
