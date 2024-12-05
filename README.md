@@ -25,7 +25,7 @@ Leverages LLM capabilities to generate comprehensive analysis reports
 This integrated approach enables automated defect analysis while incorporating historical knowledge, resulting in human-readable summaries that facilitate decision-making in industrial quality control processes. The system demonstrates the practical application of combining traditional computer vision techniques with modern AI capabilities for industrial inspection tasks.
 
 ## Architecture
-![image](https://github.com/user-attachments/assets/47b9187e-12ed-4ef3-af92-01d776538c1d)
+![image](https://github.com/user-attachments/assets/7c59e18f-2e49-45f6-9d99-5a297383f799)
 
 
 ## Key Features
