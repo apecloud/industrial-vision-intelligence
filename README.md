@@ -3,7 +3,7 @@
 ## Introduction
 IVI System is an innovative solution that combines traditional deep learning models, vision-language models, and large language models to address quality control and knowledge management challenges in industrial manufacturing. This project leverages the strengths of YOLOv8, CogVLM, Qwen-72B, and ViT-B-16 to create a comprehensive system for defect detection, analysis, and knowledge extraction.
 
-We demonstrate the system's effectiveness using the publicly available Magnetic Tile Defect Dataset https://github.com/abin24/Magnetic-tile-defect-datasets. as a benchmark case study. The implementation workflow consists of three main components:
+We demonstrate the system's effectiveness using the publicly available Magnetic Tile Defect Dataset(MTDD) https://github.com/abin24/Magnetic-tile-defect-datasets. as a benchmark case study. The implementation workflow consists of three main components:
 
 ### Defect Detection Pipeline:
   
