@@ -1,0 +1,26 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "yolov8-torch"
+spec:
+  predictor:
+    serviceAccountName: sa
+    model:
+      modelFormat:
+        name: pytorch
+      storageUri: s3://models/yolov8/best.pt
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: false   # 关键设置
+      volumeMounts:
+        - name: config-volume
+          mountPath: /config
+      env:
+        - name: TS_CONFIG_FILE
+          value: "/config/config.properties"
+    volumes:
+      - name: config-volume
+        configMap:
+          name: torchserve-config
