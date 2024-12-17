@@ -15,7 +15,6 @@ WORKDIR /app
 
 # 复制模型处理代码
 COPY ./web_yolo.py /app/
-COPY ./start.py /app/
 
 # 创建必要目录
 RUN mkdir -p /mnt/models
