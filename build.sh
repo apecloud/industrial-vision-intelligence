@@ -1,5 +1,5 @@
 docker buildx build \
-  --platform linux/arm64 \
-  -t yolov8:1.0 \
+  --platform linux/amd64 \
+  -t yolov8:2.0 \
   --load \
   .
