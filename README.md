@@ -73,6 +73,12 @@ Solution recommendation system
 ### Yolov8
 #### web server
 - YOLO_MODEL_PATH=./train_result/weights/best.pt uvicorn web_yolo:app --port 8000
+#### docker
+- build: ./build.sh
+- run with default path:
+  docker run -it --name yoloweb -v /home/xxx/train_result/weights/best.pt:/mnt/models/best.pt -p 8000:8000 yolov8:1.0
+- run with env and path:
+  docker run -it --name yoloweb -e YOLO_MODEL_PATH=/app/best.pt -v /home/slc/industrial-vision-intelligence/train_result/weights/best.pt:/app/best.pt -p 8000:8000 yolov8:1.0
 #### python client
 - python3.11 client_yolo.py -i dataset/train/images/train_1051.jpg -o out.jpg
 #### http client
