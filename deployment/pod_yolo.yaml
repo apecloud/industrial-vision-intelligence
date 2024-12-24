@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: yolo-web
+  labels:
+    app: yolo-web 
+spec:
+  initContainers:
+  - name: model-downloader
+    image: minio/mc
+    command:
+    - /bin/sh
+    - -c
+    - |
+      echo mc alias set myminio http://${MINIO_HOST}:${MINIO_PORT} $MINIO_ACCESS_KEY $MINIO_SECRET_KEY
+      mc alias set myminio http://${MINIO_HOST}:${MINIO_PORT} $MINIO_ACCESS_KEY $MINIO_SECRET_KEY
+
+      echo "Verifying MinIO connection..."
+      mc ls myminio/models/
+
+      mc cp "myminio/models/yolov8/best.pt" "/mnt/models/best.pt"
+      chmod 644 /mnt/models/best.pt
+    env:
+    - name: MINIO_HOST
+      valueFrom:
+        configMapKeyRef:
+          name: minio-config
+          key: host
+    - name: MINIO_PORT
+      valueFrom:
+        configMapKeyRef:
+          name: minio-config
+          key: port
+    - name: MINIO_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: myminio-minio-account-root
+          key: username
+    - name: MINIO_SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: myminio-minio-account-root
+          key: password
+    volumeMounts:
+    - name: model-volume
+      mountPath: /mnt/models
+
+  containers:
+  - name: yolo-web
+    image: yolov8:2.0 # 或其他 YOLO web 服务镜像
+    ports:
+    - containerPort: 8000
+    command: ["/app/start.sh"]  # 使用启动脚本
+    volumeMounts:
+    - name: model-volume
+      mountPath: /mnt/models
+    resources:
+      requests:
+        memory: "2Gi"
+        cpu: "1"
+      limits:
+        memory: "4Gi"
+        cpu: "2"
+
+  volumes:
+  - name: model-volume
+    emptyDir: {}

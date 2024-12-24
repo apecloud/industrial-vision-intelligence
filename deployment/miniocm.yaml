@@ -1,0 +1,8 @@
+# MinIO 配置
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: minio-config
+data:
+  host: "10.43.207.237"  # MinIO 服务的主机名
+  port: "9000"          # MinIO 服务的端口
